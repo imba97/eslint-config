@@ -1,0 +1,49 @@
+{
+  "name": "@imba97/eslint-config",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "以 @antfu/eslint-config 为基础的个人 ESLint 配置",
+  "author": "imba97",
+  "license": "MIT",
+  "homepage": "https://github.com/imba97/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imba97/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imba97/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --format esm,cjs --clean --dts",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^2.25.0",
+    "defu": "^6.1.4"
+  },
+  "devDependencies": {
+    "bumpp": "9.4.2",
+    "eslint": "npm:eslint-ts-patch@9.8.0-1",
+    "eslint-flat-config-utils": "^0.3.0",
+    "eslint-ts-patch": "9.5.0-0",
+    "tsup": "^8.2.4",
+    "unbuild": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
