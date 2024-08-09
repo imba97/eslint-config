@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "build": "tsup --format esm,cjs --clean --dts",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "release": "bumpp"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.25.0",
@@ -41,6 +42,7 @@
     "eslint-flat-config-utils": "^0.3.0",
     "eslint-ts-patch": "9.5.0-0",
     "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
     "unbuild": "^2.0.0"
   },
   "publishConfig": {
