@@ -1,17 +1,22 @@
 import defu from 'defu'
-import { antfu, ConfigNames, OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
+import { antfu } from '@antfu/eslint-config'
 
+import type { Linter } from 'eslint'
 import type { FlatConfigComposer } from 'eslint-flat-config-utils'
+import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
 
-export function createConfig(options: OptionsConfig & TypedFlatConfigItem = {}): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
+function createConfig(
+  options: OptionsConfig & TypedFlatConfigItem = {},
+  ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
+): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const config: OptionsConfig & TypedFlatConfigItem = {
     rules: {
-      "style/comma-dangle": ["error", "never"]
+      'style/comma-dangle': ['error', 'never']
     },
     vue: {
       overrides: {
-        "vue/block-order": ["error", {
-          order: ["style", "template", "script"]
+        'vue/block-order': ['error', {
+          order: ['style', 'template', 'script']
         }]
       }
     }
@@ -19,7 +24,7 @@ export function createConfig(options: OptionsConfig & TypedFlatConfigItem = {}):
 
   const mergedOptions = defu(options, config)
 
-  return antfu(mergedOptions);
+  return antfu(mergedOptions, ...userConfigs)
 }
 
 export default createConfig
