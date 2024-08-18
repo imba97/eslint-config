@@ -1,3 +1,5 @@
 import createConfig from './src'
 
-export default createConfig()
+export default createConfig({
+  type: 'lib'
+})
