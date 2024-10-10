@@ -11,13 +11,21 @@ function createConfig(
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const config: OptionsConfig & TypedFlatConfigItem = {
     rules: {
-      'style/comma-dangle': ['error', 'never']
+      'style/comma-dangle': ['warn', 'never']
     },
+
     vue: {
       overrides: {
         'vue/block-order': ['error', {
           order: ['style', 'template', 'script']
-        }]
+        }],
+        'vue/comma-dangle': ['warn', 'never']
+      }
+    },
+
+    jsonc: {
+      overrides: {
+        'jsonc/comma-dangle': ['warn', 'never']
       }
     }
   }
