@@ -2,7 +2,7 @@
   "name": "@imba97/eslint-config",
   "type": "module",
   "version": "0.0.5",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@10.6.1",
   "description": "以 @antfu/eslint-config 为基础的个人 ESLint 配置",
   "author": "imba97",
   "license": "MIT",
@@ -34,19 +34,24 @@
     "release": "bumpp"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.9.1",
+    "@antfu/eslint-config": "^4.8.1",
     "defu": "^6.1.4"
   },
   "devDependencies": {
     "bumpp": "9.4.2",
-    "eslint": "^9.15.0",
-    "eslint-flat-config-utils": "^0.4.0",
+    "eslint": "^9.22.0",
+    "eslint-flat-config-utils": "^2.0.1",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3",
-    "unbuild": "^2.0.0"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
