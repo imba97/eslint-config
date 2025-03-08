@@ -1,7 +1,7 @@
 {
   "name": "@imba97/eslint-config",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "pnpm@10.6.1",
   "description": "以 @antfu/eslint-config 为基础的个人 ESLint 配置",
   "author": "imba97",
